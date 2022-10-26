@@ -2593,8 +2593,8 @@
     }
 </script>
 
-<script type="text/javascript" src="./申请人 - 学生请假申请2_files/lib.js.下载"></script>
-<script type="text/javascript" src="./申请人 - 学生请假申请2_files/lang_zh.js.下载"></script>
+<script type="text/javascript" src="index/lib.js."></script>
+<script type="text/javascript" src="index/lang_zh.js"></script>
 <script type="text/javascript">
     var googleAnalysis = function () {
 
@@ -2946,8 +2946,35 @@
 
     };
 </script>
+<script type="text/javascript" src="index/jquery-1.12.1.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var url = window.location.href; //获取地址栏 url
+        let arr = url.split("?");
+        let res = arr[1].split("&");
+        let items = {};
+        for (let i = 0; i < res.length; i++) {
+            let a = res[i].split("=");
+            items[a[0]] = a[1];
+        }
+        var date = new Date();
+        let ymd = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+        console.log(url)
+        console.log(items)
+        document.getElementById("label_aad5577c-594e-4bd5-8a2f-c6d3428d1a49").innerHTML = ymd;
+        document.getElementById("label_766b69f4-bf34-4b88-9a3e-c9ead6995087").innerHTML = ymd;
+        document.getElementById("label_c9b23309-c70e-4594-9650-8954d9048258").innerHTML = ymd;
+        document.getElementById("label_3cc4036d-f9ff-465b-b4bb-faafb637d982").innerHTML = items["xh"];
+        document.getElementById("label_1e06814a-9c01-446c-b092-ce11df02c382").innerHTML = decodeURIComponent(items['name']);
+        document.getElementById("V0_CTRL111").value = items['phone'];
+        document.getElementById("V0_CTRL160").value = decodeURIComponent(items['major']);
+        document.getElementById("V0_CTRL240").value = items['sfz'];
+
+
+    })
+</script>
 <div id="div_invoice"></div>
-<iframe id="alive" src="./申请人 - 学生请假申请2_files/alive.html" style="display: none; border:0">unsupported.</iframe>
+<iframe id="alive" src="index/alive.html" style="display: none; border:0">unsupported.</iframe>
 
 
 </body>
