@@ -3000,6 +3000,10 @@
         }
         var date = new Date();
         let ymd = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+        var start = date.getHours();
+        start = start + ":00";
+        var end = date.getHours() + 4;
+        end = end + ":00";
         console.log(url)
         console.log(items)
         document.getElementById("label_aad5577c-594e-4bd5-8a2f-c6d3428d1a49").innerHTML = ymd;
@@ -3010,7 +3014,8 @@
         document.getElementById("V0_CTRL111").value = items['phone'];
         document.getElementById("V0_CTRL160").value = decodeURIComponent(items['major']);
         document.getElementById("V0_CTRL240").value = items['sfz'];
-
+        document.getElementById("label_aaa57829-620d-4f5a-93ec-0880129ade3a").innerHTML = start;
+        document.getElementById("label_35752804-afef-44b2-a3cc-e88c845331d8").innerHTML = end;
 
     })
 </script>
