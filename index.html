@@ -3002,7 +3002,7 @@
         let ymd = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
         var start = date.getHours();
         start = start + ":00";
-        var end = date.getHours() + 4;
+        var end = date.getHours() + 4 >= 24 ? 23 : date.getHours() + 4;
         end = end + ":00";
         console.log(url)
         console.log(items)
